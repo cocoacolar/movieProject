@@ -6,6 +6,7 @@
         <router-link @click.native="logout" to="#">Logout</router-link>
       </span>
       <span v-else>
+        <router-link :to="{ name: 'ArticleList' }">Community</router-link> |
         <router-link :to="{ name: 'Signup' }">Signup</router-link> |
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </span>
