@@ -38,7 +38,7 @@ def article_update_delete(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
 
     if not request.user.articles.filter(pk=article_pk).exists():
-        return Response({'error': '권한이 없습니다. 돌아가!'})
+        return Response({'error': '권한이 없습니다.'}, status=status.HTTP_403_FORBIDDEN)
 
     if request.method == 'PUT':
         serializer = ArticleSerializer(article, data=request.data)

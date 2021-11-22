@@ -5,7 +5,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('id', 'title', 'movie_title', 'created_at', 'updated_at', 'content', 'mbti',)
+        fields = ('id', 'title', 'movie_title', 'created_at', 'updated_at', 'content', 'mbti', 'user_id')
 
 '''
     title = models.CharField(max_length=100)

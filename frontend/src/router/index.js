@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home'
+import MovieDetail from '@/views/movies/MovieDetail'
 import ArticleList from '@/views/articles/ArticleList'
 import ArticleDetail from '@/views/articles/ArticleDetail'
+import ArticleUpdate from '@/views/articles/ArticleUpdate'
+import ArticleCreate from '@/views/articles/ArticleCreate'
 import Signup from '@/views/accounts/Signup'
 import Login from '@/views/accounts/Login'
 
@@ -16,6 +19,12 @@ const routes = [
     component: Home
   },
   {
+    path: '/movies/:movieId/',
+    name: 'MovieDetail',
+    component: MovieDetail,
+    props: true,
+  },
+  {
     path: '/community/articles',
     name: 'ArticleList',
     component: ArticleList
@@ -23,7 +32,19 @@ const routes = [
   {
     path: '/community/articles/:articleId',
     name: 'ArticleDetail',
-    component: ArticleDetail
+    component: ArticleDetail,
+    props: true,
+  },
+  {
+    path: '/community/articles/:articleId/update',
+    name: 'ArticleUpdate',
+    component: ArticleUpdate,
+    props: true,
+  },
+  {
+    path: '/community/articles/create',
+    name: 'ArticleCreate',
+    component: ArticleCreate,
   },
   {
     path: '/accounts/signup',

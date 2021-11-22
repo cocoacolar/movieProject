@@ -2,11 +2,11 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link :to="{ name: 'ArticleList' }">Community</router-link> |
       <span v-if="login">        
         <router-link @click.native="logout" to="#">Logout</router-link>
       </span>
       <span v-else>
-        <router-link :to="{ name: 'ArticleList' }">Community</router-link> |
         <router-link :to="{ name: 'Signup' }">Signup</router-link> |
         <router-link :to="{ name: 'Login' }">Login</router-link>
       </span>
