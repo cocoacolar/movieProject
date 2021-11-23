@@ -18,11 +18,24 @@ class Movie(models.Model):
         return self.title
 
 class Comment(models.Model):
+    RANK_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+    ]    
     content = models.TextField()
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="user_movie_comments")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    rank = models.PositiveIntegerField(choices=RANK_CHOICES, default=5)
 
     def __str__(self):
         return f'{self.content}'

@@ -14,6 +14,7 @@ export default new Vuex.Store({
     movie: {},
     movieList: [],
     config: {},
+    genreList: [],
   },
   mutations: {
     LOAD_ARTICLE: function (state, result) {
@@ -30,7 +31,11 @@ export default new Vuex.Store({
     },
     SET_TOKEN: function (state, config) {
       state.config = config
-    }
+    },
+    LOAD_GENRE_LIST: function (state, results) {
+      state.genreList = results
+    },
+    
   },
   actions: {
     loadArticle: function ({commit}, articleId) {
@@ -82,6 +87,18 @@ export default new Vuex.Store({
           // console.log(res)
           // console.log(res.data)
           commit('LOAD_MOVIE_LIST', res.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
+    loadGenreList: function ({commit}) {
+      axios({
+        method: 'get',
+        url: `${SERVER_URL}/movies/genres/`
+      })
+        .then((res) => {
+          commit('LOAD_GENRE_LIST', res.data)
         })
         .catch((err) => {
           console.log(err)

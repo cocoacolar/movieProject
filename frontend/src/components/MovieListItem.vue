@@ -1,13 +1,22 @@
 <template>
-  <div>
-    <div class="card d-inline-block" style="width: 18rem;">
-      <img :src="movie.poster_path" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ movie.title }}</h5>
-        <a href="#" class="btn btn-primary" @click="moveToDetail">Go somewhere</a>
-      </div>
-    </div>
-  </div>
+  <!-- gallery -->
+  <li v-if="movie.genres.includes(genre)||genre===0" class="col-md-6 col-lg-4 gallery tall-gallery" data-groups='["photography", "print"]'>
+      <figure class="gallery-item effect-bubba">
+          <img :src="movie.poster_path" alt="">
+          <figcaption>
+              <div class="hover-content">
+                  <h2 class="hover-title text-center text-white">{{ movie.title }}</h2><!-- / hover-title -->
+                  <p class="gallery-info text-center text-white">평점: {{ movie.vote_average }}
+                  <p class="gallery-info text-center text-white">장르: {{ movie.genres }}
+                      <span class="gallery-icons">
+                          <a href="#x" @click="moveToDetail" class="gallery-button" data-toggle="modal" data-target=".print-product"><i class="fas fa-plus"></i></a>
+                          <a href="shopping-cart.html" class="gallery-button"><i class="fas fa-shopping-cart"></i></a>
+                      </span><!--/ gallery-icons -->
+                  </p><!-- / gallery-info -->
+              </div><!-- / hover-content -->
+          </figcaption>
+      </figure><!-- / gallery-item -->
+  </li><!-- / gallery -->
 </template>
 
 <script>
@@ -16,6 +25,9 @@ export default {
   props: {
     movie: {
       type: Object,
+    },
+    genre: {
+      type: Number,
     }
   },
   methods: {

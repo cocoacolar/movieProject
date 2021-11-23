@@ -6,8 +6,8 @@ import ArticleList from '@/views/articles/ArticleList'
 import ArticleDetail from '@/views/articles/ArticleDetail'
 import ArticleUpdate from '@/views/articles/ArticleUpdate'
 import ArticleCreate from '@/views/articles/ArticleCreate'
-import Signup from '@/views/accounts/Signup'
-import Login from '@/views/accounts/Login'
+// import Signup from '@/views/accounts/Signup'
+// import Login from '@/views/accounts/Login'
 
 
 Vue.use(VueRouter)
@@ -46,16 +46,16 @@ const routes = [
     name: 'ArticleCreate',
     component: ArticleCreate,
   },
-  {
-    path: '/accounts/signup',
-    name: 'Signup',
-    component: Signup,
-  },
-  {
-    path: '/accounts/login',
-    name: 'Login',
-    component: Login,
-  },
+  // {
+  //   path: '/accounts/signup',
+  //   name: 'Signup',
+  //   component: Signup,
+  // },
+  // {
+  //   path: '/accounts/login',
+  //   name: 'Login',
+  //   component: Login,
+  // },
 ]
 
 const router = new VueRouter({

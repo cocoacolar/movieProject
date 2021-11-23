@@ -7,10 +7,11 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 
-from .serializers import MovieSerializer
-from . models import Movie
+from .serializers import MovieSerializer, GenreSerializer, CommentSerializer
+from . models import Movie, Genre
 
 from pprint import pprint
+
 # Create your views here.
 
 @api_view(['GET'])
@@ -25,10 +26,26 @@ def movie_list(request):
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def movie_detail(request, movie_pk):
-    article = get_object_or_404(Movie, pk=movie_pk)
-    serializer = MovieSerializer(article)
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = MovieSerializer(movie)
     return Response(serializer.data)
 
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def genre_list(request):
+    genres = Genre.objects.all()
+    serializer = GenreSerializer(genres, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def comment_create(request):
+    print('코멘트 크리에이트!!!!!')
+    serializer = CommentSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(user=request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 # @api_view(['GET'])
 # @permission_classes([AllowAny])
