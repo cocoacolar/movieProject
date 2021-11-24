@@ -15,6 +15,7 @@ export default new Vuex.Store({
     movieList: [],
     config: {},
     genreList: [],
+    currentUser: {},
   },
   mutations: {
     LOAD_ARTICLE: function (state, result) {
@@ -35,6 +36,11 @@ export default new Vuex.Store({
     LOAD_GENRE_LIST: function (state, results) {
       state.genreList = results
     },
+    GET_CURRENT_USER: function (state, result) {
+      // console.log(typeof(result))
+      state.currentUser = result
+      // console.log(state.currentUser)
+    }
     
   },
   actions: {
@@ -111,6 +117,19 @@ export default new Vuex.Store({
       }
       this.commit('SET_TOKEN', config)
     },
+    getCurrentUser: function ({commit}) {
+      axios({
+        method: 'get',
+        url: `${SERVER_URL}/accounts/get-user/`,
+        headers: this.state.config
+      })
+        .then((res) => {
+          commit('GET_CURRENT_USER', res.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })      
+    }
   },  
   modules: {
   }

@@ -28,12 +28,12 @@ import axios from 'axios'
 const SERVER_URL = process.env.VUE_APP_SERVER_URL
 
 export default {
-  name: 'MovieDetailCommentItem',
+  name: 'ArticleDetailCommentItem',
   props: {
     comment: {
       type: Object,
     },
-    movieId: {
+    articleId: {
       type: Number,
     },
   },
@@ -43,7 +43,7 @@ export default {
       this.setToken()
       axios({
         method: 'delete',
-        url: `${SERVER_URL}/movies/comments/${this.comment.id}/delete/`,
+        url: `${SERVER_URL}/community/comments/${this.comment.id}/delete/`,
         headers: this.config
       })
         .then((res) => {

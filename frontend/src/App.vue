@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="preloader">
             <span></span>
             <span></span>
         </div>
-    </div>
+    </div> -->
 
     <div class="top-menu top-menu-primary">
         <div class="container">
@@ -18,6 +18,9 @@
                     <a href="#"><i class="fab fa-pinterest"></i></a>
                 </span>
                 <span class="right">
+                    <span v-if="isLogin">
+                      <router-link @click.native="goToProfile" to="#"><i class="fas fa-fire mr-1"></i><span>Profile</span></router-link>
+                    </span>
                     <span v-if="isLogin">
                       <router-link @click.native="logout" to="#"><i class="fas fa-user mr-1"></i><span>Logout</span></router-link>
                     </span>
@@ -38,7 +41,7 @@
                 <span class="sr-only">Toggle navigation</span>
             </button><!-- / navbar-toggler -->
 
-            <a class="navbar-brand mobile-brand m-auto" href="/"><img src="images/logo-icon.png" alt=""></a>
+            <!-- <a class="navbar-brand mobile-brand m-auto" href="/"><img src="@/assets/images/logo-icon.png" alt=""></a> -->
 
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle-2" aria-controls="navbar-toggle-2" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar top-bar"></span>
@@ -58,7 +61,7 @@
                 </ul><!-- / navbar-nav -->
             </div><!-- / navbar-collapse -->
 
-            <a class="navbar-brand m-auto" href="/"><img src="images/logo-icon.png" alt=""></a>
+            <a class="navbar-brand m-auto" href="/"><img src="@/assets/images/logo-icon.png" alt=""></a>
 
             <div class="collapse navbar-collapse" id="navbar-toggle-2">
                 <ul class="navbar-nav ml-auto">
@@ -195,6 +198,7 @@
 
 <script>
 import axios from 'axios'
+import { mapState, mapActions } from 'vuex'
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL
 
@@ -217,10 +221,12 @@ export default {
     }
   },
   methods: {   
+    ...mapActions(['getCurrentUser', 'setToken']),
     logout: function () {
       localStorage.removeItem('jwt')
       this.isLogin = false
-      this.$router.push({ name: 'Home' })
+      this.$router.go()
+      // this.$router.push({ name: 'Home' })
     },
     userLogin: function (credentials) {
       console.log(credentials)
@@ -248,6 +254,14 @@ export default {
           console.log(err)
         })
     }, 
+    goToProfile : function () {
+      this.setToken()
+      this.getCurrentUser()
+      console.log(this.currentUser)
+      // console.log("HAHAHAHAHAHAHAAAAAAAAAAAAAAAAAA")
+      // console.log(this.currentUser)
+      this.$router.push({ name: 'UserProfile', params: { userId: this.currentUser.id } })
+    }
   },
   created: function () {
     // 1. Vue instance가 생성된 직후에 호출되어 jwt를 가져오기
@@ -257,6 +271,9 @@ export default {
       // 3. true로 변경하고, 없으면 유지한다.
       this.isLogin = true
     }
+  },
+  computed: {
+    ...mapState(["currentUser"])
   }
 }
 </script>

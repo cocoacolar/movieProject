@@ -2,7 +2,8 @@ from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-
+from django.shortcuts import get_object_or_404
+from django.contrib.auth import get_user_model
 
 from .serializers import UserSerializer
 
@@ -29,3 +30,21 @@ def signup(request):
         # password는 직렬화 과정에는 포함 되지만 → 표현(response)할 때는 나타나지 않는다. (write_only)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_user(request):
+    # print("ALLOW ANY")
+    # ALLOW ANY일 때 왜 안들어오는지 모르겠음.
+    user = get_object_or_404(get_user_model(), pk=request.user.id)
+    serializer = UserSerializer(user)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_user_profile(request, user_pk):
+    user = get_object_or_404(get_user_model(), pk=user_pk)
+    serializer = UserSerializer(user)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)    

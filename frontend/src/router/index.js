@@ -6,6 +6,7 @@ import ArticleList from '@/views/articles/ArticleList'
 import ArticleDetail from '@/views/articles/ArticleDetail'
 import ArticleUpdate from '@/views/articles/ArticleUpdate'
 import ArticleCreate from '@/views/articles/ArticleCreate'
+import UserProfile from '@/views/accounts/UserProfile'
 // import Signup from '@/views/accounts/Signup'
 // import Login from '@/views/accounts/Login'
 
@@ -25,26 +26,31 @@ const routes = [
     props: true,
   },
   {
-    path: '/community/articles',
+    path: '/community/articles/',
     name: 'ArticleList',
     component: ArticleList
   },
   {
-    path: '/community/articles/:articleId',
+    path: '/community/articles/:articleId/',
     name: 'ArticleDetail',
     component: ArticleDetail,
     props: true,
   },
   {
-    path: '/community/articles/:articleId/update',
+    path: '/community/articles/:articleId/update/',
     name: 'ArticleUpdate',
     component: ArticleUpdate,
     props: true,
   },
   {
-    path: '/community/articles/create',
+    path: '/community/articles/create/',
     name: 'ArticleCreate',
     component: ArticleCreate,
+  },
+  {
+    path: '/accounts/:userId/',
+    name: 'UserProfile',
+    component: UserProfile,
   },
   // {
   //   path: '/accounts/signup',

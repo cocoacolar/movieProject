@@ -29,7 +29,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE, related_name='articles')
-    like = models.ManyToManyField(
+    like_user = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name='like_articles')
     mbti = models.CharField(blank=True, choices=MBTI_CHOICES, max_length=4) 
     
@@ -39,7 +39,7 @@ class Article(models.Model):
 
 class Comment(models.Model):
     content = models.TextField()
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="user_article_comments")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

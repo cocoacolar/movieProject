@@ -144,7 +144,6 @@
         </div><!-- / container -->
     </section><!-- / posts -->  
 
-    <p>{{ movie.id }}</p>
   </div>
 </template>
 
