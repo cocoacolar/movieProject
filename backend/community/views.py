@@ -23,6 +23,7 @@ def article_list_create(request):
         # 왜 POST일 때 인증 안된 것을 막아주는지 모르겠음. 위에 ㅋㅋㅋㅋ가 프린트 안됨
         # Front에서 로그인 안한 경우 JWT 토큰을 헤더에 안담는데, 이게 POST일때는 꼭 JWT 토큰이 필요한가? 여기까지 일단 고민.
         serializer = ArticleSerializer(data=request.data)
+        print(serializer)
         if serializer.is_valid(raise_exception=True):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)

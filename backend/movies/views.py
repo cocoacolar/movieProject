@@ -8,7 +8,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 
 from .serializers import MovieSerializer, GenreSerializer, CommentSerializer
-from . models import Movie, Genre
+from . models import Movie, Genre, Comment
 
 from pprint import pprint
 
@@ -41,12 +41,29 @@ def genre_list(request):
 
 @api_view(['POST'])
 def comment_create(request):
-    print('코멘트 크리에이트!!!!!')
+    # print(request.data.get("movie_id"))
     serializer = CommentSerializer(data=request.data)
+    # print(serializer)
     if serializer.is_valid(raise_exception=True):
-        serializer.save(user=request.user)
+        serializer.save(user=request.user, movie_id=request.data.get("movie_id"))
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+
+@api_view(['DELETE'])
+def comment_delete(request, comment_pk):
+    comment = get_object_or_404(Comment, pk=comment_pk)
+
+    if not request.user.user_movie_comments.filter(pk=comment_pk).exists():
+        return Response({'error': '권한이 없습니다.'}, status=status.HTTP_403_FORBIDDEN)
+
+    comment.delete()
+    return Response({ 'id': comment_pk })
+
+
+
+
+
+    
 # @api_view(['GET'])
 # @permission_classes([AllowAny])
 # def api_movie_list(request):

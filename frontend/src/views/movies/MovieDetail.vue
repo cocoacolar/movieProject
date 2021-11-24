@@ -45,7 +45,7 @@
                                 <div class="spacer">&nbsp;</div>
 
                                 <ul class="media-list">
-                                  <MovieDetailCommentItem v-for="(comment, index) in movie.comments" :key="index" :comment="comment"/>
+                                  <MovieDetailCommentItem v-for="(comment, index) in movie.comments" :key="index" :comment="comment" :movieId="movieId"/>
                                 </ul><!-- / media-list -->
 
                                 <div class="spacer-2x">&nbsp;</div>
@@ -161,7 +161,7 @@ export default {
     return {
       commentData: {
         content: '',
-        movie_id: '',
+        movie_id: 0,
         rank: 5,
       }
     }

@@ -21,6 +21,7 @@ class GenreSerializer(serializers.ModelSerializer):
         fields = ('id', 'name',)
 
 class CommentSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Comment
         fields = ('id', 'content', 'movie_id', 'user_id', 'created_at','updated_at', 'rank',)
