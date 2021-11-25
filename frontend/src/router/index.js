@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home'
 import MovieDetail from '@/views/movies/MovieDetail'
+import MbtiMovieRecommend from '@/views/movies/MbtiMovieRecommend'
 import ArticleList from '@/views/articles/ArticleList'
 import ArticleDetail from '@/views/articles/ArticleDetail'
 import ArticleUpdate from '@/views/articles/ArticleUpdate'
@@ -24,6 +25,11 @@ const routes = [
     name: 'MovieDetail',
     component: MovieDetail,
     props: true,
+  },
+  {
+    path: '/movies/mbti-movie-recommend/',
+    name: 'MbtiMovieRecommend',
+    component: MbtiMovieRecommend,
   },
   {
     path: '/community/articles/',
@@ -51,6 +57,7 @@ const routes = [
     path: '/accounts/:userId/',
     name: 'UserProfile',
     component: UserProfile,
+    props: true,
   },
   // {
   //   path: '/accounts/signup',

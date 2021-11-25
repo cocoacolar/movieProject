@@ -4,8 +4,6 @@
         <header class="home-header parallax" >
             <div class="header-content dark text-center">
                 <h1 class="header-title mb-0">게시글 상세</h1>
-                <p class="inner-space mb-0">{{ currentUser }}</p>
-                <p class="inner-space mb-0">{{ config }}</p>
             </div><!-- / header-content -->
         </header>
     </div><!-- / container -->  
@@ -16,9 +14,12 @@
             <div class="row">
                 <div class="col-md-8 blog-content">
                         <div class="blog block">
-                            <div class="post-content">
-                                <h4>제목- {{article.title}}</h4>
-                                <h4>영화제목- {{ article.movie_title }}</h4>
+                            <div class="post-content post-my-custom">
+                                <h4 class="mb-3">Title</h4>
+                                <h5 class="mb-4">{{article.title}}</h5>
+                                <hr>
+                                <h4 class="mb-3">Movie Title</h4>
+                                <h5>{{ article.movie_title }}</h5>
                                 <!-- <blockquote class="blockquote">
                                     <p class="mb-0">{{ movie.overview }}</p>
                                 </blockquote> -->
@@ -26,8 +27,8 @@
                         </div><!-- / blog-block -->
 
                         <div class="blog block">
-                            <div class="post-content">
-                                <h4>내용</h4>                        
+                            <div class="post-content post-my-custom">
+                                <h4 class="mb-3">Content</h4>                        
                                 <br>
                                 <p class="mb-3">{{ article.content }}</p>
                                 <!-- <blockquote class="blockquote">
@@ -38,14 +39,14 @@
 
                         <div class="spacer">&nbsp;</div>
 
-                        <div id="share-post" class="text-center bg-white">
-                            <a href="">좋야요 수:{{ article.like_user.length }}</a>
+                        <!-- <div id="share-post" class="text-center bg-white"> -->
+                            <!-- <a href="">좋야요 수:{{ article.like_user.length }}</a> -->
                             <!-- <a href="#x" class="btn-social btn-facebook m-1 rectangle"><i class="fab fa-facebook-f"></i> <span>Share - 93.3K</span></a>
                             <a href="#x" class="btn-social btn-twitter m-1 rectangle"><i class="fab fa-twitter"></i> <span>Tweet - 17.5K</span></a> -->
                             <!-- <a href="#x" class="btn-social btn-google m-1 rectangle"><i class="fab fa-google-plus-g"></i> <span>Share - 7.9K</span></a>
                             <a href="#x" class="btn-social btn-pinterest m-1 rectangle"><i class="fab fa-pinterest"></i> <span>Pin It - 7.7K</span></a> -->
-                            <a href="#x" class="btn-social btn-pinterest m-1 rectangle"><i class="fab fa-pinterest"></i> <span>좋아요</span></a>
-                        </div><!-- share-post -->
+                            <!-- <a href="#x" class="btn-social btn-pinterest m-1 rectangle"><i class="fab fa-pinterest"></i> <span>좋아요</span></a> -->
+                        <!-- </div>share-post -->
 
                         <div class="spacer">&nbsp;</div>
                         <div id="comments" class="comments">
@@ -93,59 +94,37 @@
                     </div><!-- / sidebar-widget -->
 
                     <div class="sidebar-widget">
-                        <h4 class="widget-title text-center">RECENT POSTS</h4>
-                        <div class="spacer">&nbsp;</div>
-                        <div class="post-widget">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="recent-posts first">
-                                        <div class="recent-post-image">
-                                            <img src="images/blog-post.jpg" alt="">
-                                        </div><!-- / recent-post-image -->
-                                        <div class="recent-post-content">
-                                            <a href="single-post.html" class="recent-post-title">TRAVELING</a>
-                                            <p class="text-sm mb-2">Travel</p>
-                                            <p class="text-sm opc-75"><i class="far fa-clock"></i> 01 SEP 2018</p>
-                                        </div><!-- / recent-post-content -->
-                                    </div><!-- / recent-posts -->
-                                </li>
-                                <li>
-                                    <div class="recent-posts pt-2">
-                                        <div class="recent-post-image">
-                                            <img src="images/blog-post2.jpg" alt="">
-                                        </div><!-- / recent-post-image -->
-                                        <div class="recent-post-content">
-                                            <a href="single-post.html" class="recent-post-title">PHOTOSHOOT</a>
-                                            <p class="text-sm mb-2">Photography</p>
-                                            <p class="text-sm opc-75"><i class="far fa-clock"></i> 31 AUG 2018</p>
-                                        </div><!-- / recent-post-content -->
-                                    </div><!-- / recent-posts -->
-                                </li>
-                            </ul>
-                        </div><!-- / post-widget -->
+                      <h5 class="widget-title text-center text-primary">AD</h5>
+                      <div class="about-widget">
+                          <img src="https://img.asiatoday.co.kr/file/2021y/04m/14d/2021041401001299300078891.jpg" alt="">
+                      </div><!-- / about-widget -->
                     </div><!-- / sidebar-widget -->
 
                     <div class="sidebar-widget">
-                        <h4 class="widget-title text-center pb-3">NEWSLETTER</h4>
-                        <p class="text-center">Subscribe to our newsletter to get notified about new posts, informations and updates.</p>
+                      <h5 class="widget-title text-center text-primary">AD</h5>
+                      <div class="about-widget">
+                          <img src="https://lh3.googleusercontent.com/proxy/b7qrXlRRi7FTMjbxggpXDRlaa3I7BQ3uW6Jn7N2mgWdRD9M7YPSxrQNlEJFdubjw3mzKcFKuYbEexpIqRh3UxtUfKRGn8VT_-1DMPDZdqez3Hu1BgFcMx_V5Csiye7_blnU2h7po89Nyk9TSywkvpg" alt="">
+                      </div><!-- / about-widget -->
+                    </div><!-- / sidebar-widget -->
+
+
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title text-center pb-3">Search</h4>
+                        <p class="text-center">Find the movie you want!</p>
                         <div class="input-group mt-3">
-                            <input type="text" class="form-control border-faded" placeholder="Email Address">
+                            <input type="text" class="form-control border-faded" placeholder="Search Movie">
                             <span class="input-group-btn">
-                                <a href="#x" class="btn btn-w-icon btn-primary ml-2"><span><i class="fas fa-paper-plane"></i></span></a>
+                                <a href="#x" class="btn btn-w-icon btn-primary ml-2"><span><i class="fas fa-search"></i></span></a>
                             </span>
                         </div><!-- / input-group -->
                     </div><!-- / sidebar-widget -->
 
                     <div class="sidebar-widget">
-                        <h4 class="widget-title text-center pb-2">TAGS</h4>
+                        <h4 class="widget-title text-center pb-2">Supporters</h4>
                         <div class="tag-cloud">
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#design</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#photography</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#videography</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#paintings</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#photo</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#art</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#travel</a>
+                            <a href="https://www.ssafy.com/" class="btn btn-sm btn-black rectangle mt-1">#SSAFY</a>
+                            <a href="https://hphk.kr/" class="btn btn-sm btn-black rectangle mt-1">#HPHK</a>
+                            <a href="http://www.norangtongdak.co.kr/" class="btn btn-sm btn-black rectangle mt-1">#노랑통닭</a>
                         </div><!-- / tag-cloud -->
                         <!-- / tags-widget -->
                     </div><!-- / sidebar-widget -->
@@ -234,5 +213,7 @@ export default {
 </script>
 
 <style>
-
+.post-my-custom {
+  background-color: #E4E4E4 !important;
+}
 </style>

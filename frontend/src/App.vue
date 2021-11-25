@@ -56,7 +56,7 @@
                       <router-link to="/" class="nav-link">Home</router-link>
                     </li>
                     <li class="nav-item">
-                      <router-link to="#" class="nav-link">MBTI추천영화</router-link>
+                      <router-link :to="{ name: 'MbtiMovieRecommend'}" class="nav-link">MBTI추천영화</router-link>
                     </li>
                 </ul><!-- / navbar-nav -->
             </div><!-- / navbar-collapse -->
@@ -161,6 +161,7 @@
                             <input type="email" class="form-control mb-3" id="register-email" placeholder="Email Address" v-model="registerCredentials.email">
                             <select id="mbti" class="custom-select" name="mbti" v-model="registerCredentials.mbti">
                               <option selected>Choose MBTI</option>
+                              <option value="ISFJ">ISTJ</option>
                               <option value="ISFJ">ISFJ</option>
                               <option value="INFJ">INFJ</option>
                               <option value="INTJ">INTJ</option>
@@ -236,6 +237,7 @@ export default {
           // console.log(res)
           localStorage.setItem('jwt', res.data.token)
           this.isLogin = true
+          this.getCurrentUser()
           this.$router.go()
         })
         .catch((err) => {

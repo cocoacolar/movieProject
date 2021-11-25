@@ -30,72 +30,40 @@
 
                 <div class="col-md-4 blog-sidebar mt-3">
                     <div class="sidebar-widget">
-                        <div class="about-widget">
-                            <h4 class="widget-title text-center">ABOUT ME</h4>
-                            <div class="about-image text-center">
-                                <img src="images/creator.jpg" alt="">
-                            </div><!-- / about-image -->
-                            <p class="text-center">Quisque tincidunt sodales ante, nec porttitor sem pharetra vitae. Nullam quis dui sit amet lectus facilisis iaculis pulvinar.</p>
-                        </div><!-- / about-widget -->
+                      <h5 class="widget-title text-center text-primary">AD</h5>
+                      <div class="about-widget">
+                          <img src="https://img.asiatoday.co.kr/file/2021y/04m/14d/2021041401001299300078891.jpg" alt="">
+                      </div><!-- / about-widget -->
                     </div><!-- / sidebar-widget -->
 
                     <div class="sidebar-widget">
-                        <h4 class="widget-title text-center">RECENT POSTS</h4>
-                        <div class="spacer">&nbsp;</div>
-                        <div class="post-widget">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="recent-posts first">
-                                        <div class="recent-post-image">
-                                            <img src="images/blog-post.jpg" alt="">
-                                        </div><!-- / recent-post-image -->
-                                        <div class="recent-post-content">
-                                            <a href="single-post.html" class="recent-post-title">TRAVELING</a>
-                                            <p class="text-sm mb-2">Travel</p>
-                                            <p class="text-sm opc-75"><i class="far fa-clock"></i> 01 SEP 2018</p>
-                                        </div><!-- / recent-post-content -->
-                                    </div><!-- / recent-posts -->
-                                </li>
-                                <li>
-                                    <div class="recent-posts pt-2">
-                                        <div class="recent-post-image">
-                                            <img src="images/blog-post2.jpg" alt="">
-                                        </div><!-- / recent-post-image -->
-                                        <div class="recent-post-content">
-                                            <a href="single-post.html" class="recent-post-title">PHOTOSHOOT</a>
-                                            <p class="text-sm mb-2">Photography</p>
-                                            <p class="text-sm opc-75"><i class="far fa-clock"></i> 31 AUG 2018</p>
-                                        </div><!-- / recent-post-content -->
-                                    </div><!-- / recent-posts -->
-                                </li>
-                            </ul>
-                        </div><!-- / post-widget -->
+                      <h5 class="widget-title text-center text-primary">AD</h5>
+                      <div class="about-widget">
+                          <img src="https://lh3.googleusercontent.com/proxy/b7qrXlRRi7FTMjbxggpXDRlaa3I7BQ3uW6Jn7N2mgWdRD9M7YPSxrQNlEJFdubjw3mzKcFKuYbEexpIqRh3UxtUfKRGn8VT_-1DMPDZdqez3Hu1BgFcMx_V5Csiye7_blnU2h7po89Nyk9TSywkvpg" alt="">
+                      </div><!-- / about-widget -->
                     </div><!-- / sidebar-widget -->
 
+
                     <div class="sidebar-widget">
-                        <h4 class="widget-title text-center pb-3">NEWSLETTER</h4>
-                        <p class="text-center">Subscribe to our newsletter to get notified about new posts, informations and updates.</p>
+                        <h4 class="widget-title text-center pb-3">Search</h4>
+                        <p class="text-center">Find the movie you want!</p>
                         <div class="input-group mt-3">
-                            <input type="text" class="form-control border-faded" placeholder="Email Address">
+                            <input type="text" class="form-control border-faded" placeholder="Search Movie">
                             <span class="input-group-btn">
-                                <a href="#x" class="btn btn-w-icon btn-primary ml-2"><span><i class="fas fa-paper-plane"></i></span></a>
+                                <a href="#x" class="btn btn-w-icon btn-primary ml-2"><span><i class="fas fa-search"></i></span></a>
                             </span>
                         </div><!-- / input-group -->
                     </div><!-- / sidebar-widget -->
 
                     <div class="sidebar-widget">
-                        <h4 class="widget-title text-center pb-2">TAGS</h4>
+                        <h4 class="widget-title text-center pb-2">Supporters</h4>
                         <div class="tag-cloud">
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#design</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#photography</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#videography</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#paintings</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#photo</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#art</a>
-                            <a href="#x" class="btn btn-sm btn-black rectangle mt-1">#travel</a>
+                            <a href="https://www.ssafy.com/" class="btn btn-sm btn-black rectangle mt-1">#SSAFY</a>
+                            <a href="https://hphk.kr/" class="btn btn-sm btn-black rectangle mt-1">#HPHK</a>
+                            <a href="http://www.norangtongdak.co.kr/" class="btn btn-sm btn-black rectangle mt-1">#노랑통닭</a>
                         </div><!-- / tag-cloud -->
                         <!-- / tags-widget -->
-                    </div><!-- / sidebar-widget -->
+                    </div><!-- / sidebar-widget -->                    
                 </div><!-- / blog-sidebar -->
             </div><!-- / row -->
         </div><!-- / container -->
