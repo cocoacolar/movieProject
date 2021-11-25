@@ -1,20 +1,20 @@
 <template>
   <div>
     <div class="container">
-        <header class="home-header parallax">
+        <header class="mbti-header parallax">
             <div class="header-content dark text-center">
                 <h1 class="header-title mb-0">MBTI 추천영화</h1>
-                <p class="inner-space mb-0">Movies</p>
             </div><!-- / header-content -->
         </header>
     </div><!-- / container -->
 
+    <div class="spacer-2x">&nbsp;</div>
+
     <section id="gallery" class="p-0 line-effect">
         <div class="container">
             <!-- gallery filter -->
-            <label for="mbti">MBTI CHOICE</label>
             <!-- <input type="text" id="mbti" v-model="credentials.mbti" @keypress.enter="signup(credentials)"> -->
-            <select id="mbti" name="mbti" class="custom-select" @change="onChange($event)">
+            <select id="mbti" name="mbti" class="custom-select text-center" @change="onChange($event)">
               <option value="ALL">ALL</option>
               <option value="ISTJ">ISTJ</option>
               <option value="ISFJ">ISFJ</option>
@@ -35,6 +35,7 @@
             </select>
             <!-- / gallery filter -->
         </div><!-- / container -->
+        <div class="spacer-1x">&nbsp;</div>
         <div class="container full-width">
             <!-- <h3 class="section-title hidden">GALLERY</h3> -->
             <ul class="row gallery line-effect list-unstyled mb-0" id="grid">

@@ -3,8 +3,8 @@
     <div class="container">
         <header class="home-header parallax">
             <div class="header-content dark text-center">
-                <h1 class="header-title mb-0">Home</h1>
-                <p class="inner-space mb-0">Movies</p>
+                <h1 class="header-title mb-0">GGANG GGANG </h1>
+                <p class="inner-space mb-0">MOVIE VILLAGE</p>
             </div><!-- / header-content -->
         </header>
     </div><!-- / container -->

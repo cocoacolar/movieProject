@@ -4250,6 +4250,15 @@ header.account-header {
   background-image: url(../images/account-header.jpg);
 }
 
+header.mbti-header {
+  background-image: url(../images/mbti-header.jpg);
+}
+
+header.article-header {
+  background-image: url(../images/article-header.jpg);
+}
+
+
 .header-content {
   padding: 120px 30px;
   border: 2px solid white;

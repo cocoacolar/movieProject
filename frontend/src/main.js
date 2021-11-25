@@ -13,9 +13,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/fontawesome-all.min.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+// vue-moment
+import VueMoment from 'vue-moment'
+
 Vue.config.productionTip = false
 // Vue.use(BootstrapVue)
 Vue.use($)
+Vue.use(VueMoment)
 
 new Vue({
   store,

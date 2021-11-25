@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-        <header class="home-header parallax" >
+        <header class="article-header parallax" >
             <div class="header-content dark text-center">
                 <h1 class="header-title mb-0">게시판</h1>
             </div><!-- / header-content -->

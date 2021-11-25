@@ -68,32 +68,35 @@
                     <li class="nav-item">
                       <router-link :to="{ name: 'ArticleList' }" class="nav-link">Community</router-link>
                     </li>
-                    <li class="nav-item dropdown extra-dropdowns">
+                    <li class="nav-item">
+                      <router-link to="#" class="nav-link">MyMovies</router-link>
+                    </li>
+                    <!-- <li class="nav-item dropdown extra-dropdowns">
                         <a class="nav-link last-menu-item has-dropdown-toggle dropdown-toggle" href="#x" id="dropdown3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile<span class="count count-primary">2</span></a>
                         <div class="dropdown-menu animated fadeIn fast" aria-labelledby="dropdown3">
                             <div class="cart-small">
                                 <img src="images/product-small1.jpg" alt="">
                                 <p><a href="#x" class="text-black">Amazing Framed Art</a> <br> <span>1 x $29.99</span></p>
                                 <a href="#x"> <i class="md-icon dp14 close-icon">close</i></a>
-                            </div><!-- / cart-small -->
+                            </div>
                             <div class="cart-small">
                                 <img src="images/product-small2.jpg" alt="">
                                 <p><a href="#x" class="text-black">Printed Photography</a> <br> <span>1 x $14.99</span></p>
                                 <a href="#x"> <i class="md-icon dp14 close-icon">close</i></a>
-                            </div><!-- / cart-small -->
+                            </div>
                             <p class="text-left cart-small-total"><b>Subtotal: $44.98</b></p>
                             <div class="cart-small-footer text-center">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <a href="shopping-cart.html" class="mini-cart-btn"><i class="md-icon dp12 mr-1">shopping_cart</i> <span class="va-middle"><b>VIEW CART</b></span></a>
-                                    </div><!-- / column -->
+                                    </div>
                                     <div class="col-sm-6">
                                         <a href="checkout.html" class="mini-cart-btn mb-0"><i class="md-icon dp12 mr-1">exit_to_app</i> <span class="va-middle"><b>CHECKOUT</b></span></a>
-                                    </div><!-- / column -->
-                                </div><!-- / row -->
-                            </div><!-- / cart-small-footer -->
-                        </div><!-- / dropdown-menu -->
-                    </li><!-- / dropdown -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>/ dropdown -->
                 </ul><!-- / navbar-nav -->
             </div><!-- / navbar-collapse -->
         </div><!-- / container -->
@@ -237,7 +240,16 @@ export default {
           // console.log(res)
           localStorage.setItem('jwt', res.data.token)
           this.isLogin = true
-          this.getCurrentUser()
+          // this.getCurrentUser() 
+        })
+        .then(() => {
+          setTimeout(() => {
+            console.log("자는중")
+            this.getCurrentUser()
+          }, 1000)
+        })
+        .then(() => {
+          console.log("새로고침 가즈아")
           this.$router.go()
         })
         .catch((err) => {
@@ -259,8 +271,8 @@ export default {
     goToProfile : function () {
       this.setToken()
       this.getCurrentUser()
+      console.log("goToProfile currentUser출력")
       console.log(this.currentUser)
-      // console.log("HAHAHAHAHAHAHAAAAAAAAAAAAAAAAAA")
       // console.log(this.currentUser)
       this.$router.push({ name: 'UserProfile', params: { userId: this.currentUser.id } })
     }

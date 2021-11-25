@@ -7,8 +7,8 @@
     </div>
     <div class="media-body">
         <div class="comment-info">
-            <div class="comment-date text-sm"><i class="far fa-clock mr-1"></i> {{ comment.updated_at }} <button @click="deleteComment" class="btn btn-danger">x</button></div>
-            <div class="comment-author"><a href="#x"><b>{{ comment.user.username }}</b></a></div>
+            <div class="comment-author"><a href="#x" class="mr-2"><b>{{ comment.user.username }}</b></a><button id="custom-delete-button" @click="deleteComment" class="btn btn-danger"><i class="fas fa-times"></i></button></div>
+            <div class="comment-date text-sm"><i class="far fa-clock mr-1"></i> {{$moment(comment.updated_at).format('YYYY-MM-DD')}} </div>
         </div><!-- / comment-info -->
         <div class="comment">
             <p class="mb-0">{{ comment.content }}</p>
@@ -65,6 +65,10 @@ export default {
 </script>
 
 <style>
-
+#custom-delete-button {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+}
 </style>
 
