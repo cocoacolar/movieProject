@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-        <header class="contact-header parallax">
+        <header class="home-header parallax">
             <div class="header-content dark text-center">
                 <h1 class="header-title mb-0">{{ userData.username }}'s Profile</h1>
             </div><!-- / header-content -->
